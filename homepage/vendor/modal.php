@@ -30,7 +30,7 @@
         '$target_file');";
 
         $con -> query($sql);
-        header("Location: /SE_4105/homepage/vendor/product.php");
+        header("Location: /TindaJaro/homepage/vendor/product.php");
     }
   	}
  ?>

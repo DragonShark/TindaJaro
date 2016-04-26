@@ -38,7 +38,7 @@ if (!empty($_POST)) {
 			'$classification');";
 
 			$con -> query($sql);
-			header("Location:/SE_4105/index.php?success=true");
+			header("Location:/TindaJaro/index.php?success=true");
 		}
 	}
 	?>

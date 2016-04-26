@@ -1,4 +1,4 @@
-		<link rel="stylesheet" type="text/css" href="SE_4105/style.css">
+		<link rel="stylesheet" type="text/css" href="TindaJaro/style.css">
 		<script>
 		var timer = function(){
 			myTimer()

@@ -3,7 +3,7 @@
 class LoginTest extends PHPUnit_Extensions_Selenium2TestCase {
   public function setUp()
   {
-    $this->setBrowserUrl('http://localhost/SE_4105');
+    $this->setBrowserUrl('http://localhost/TindaJaro');
     $this->setBrowser('firefox');
   }
 
@@ -28,22 +28,22 @@ class LoginTest extends PHPUnit_Extensions_Selenium2TestCase {
     $link = $this -> byId( 'sign-up' );
     $link -> click();
 
-    $this -> assertEquals( 'http://localhost/SE_4105/registration/registration.php', $this -> url());
+    $this -> assertEquals( 'http://localhost/TindaJaro/registration/registration.php', $this -> url());
   }
 
   public function testRegistrationFormExist()
   {
-    $this -> url ( 'http://localhost/SE_4105/registration/registration.php' );
+    $this -> url ( 'http://localhost/TindaJaro/registration/registration.php' );
 
     $form = $this -> byId( 'Registration' );
     $action = $form -> attribute( 'action' );
 
-    $this -> assertEquals( 'http://localhost/SE_4105/registration/registration.php', $action);
+    $this -> assertEquals( 'http://localhost/TindaJaro/registration/registration.php', $action);
   }
 
   public function testRegistrationFieldExist()
   {
-    $this -> url( 'http://localhost/SE_4105/registration/registration.php' );
+    $this -> url( 'http://localhost/TindaJaro/registration/registration.php' );
 
     $firstname = $this -> byId( 'fst' );
     $lastname = $this -> byId( 'lst' );
@@ -64,7 +64,7 @@ class LoginTest extends PHPUnit_Extensions_Selenium2TestCase {
 
   public function testRegistrationValid()
   {
-    $this -> url( 'http://localhost/SE_4105/registration/registration.php' );
+    $this -> url( 'http://localhost/TindaJaro/registration/registration.php' );
 
     $firstname = $this -> byId( 'fst' );
     $lastname = $this -> byId( 'lst' );
@@ -85,7 +85,7 @@ class LoginTest extends PHPUnit_Extensions_Selenium2TestCase {
 
     $form -> submit();
 
-    $this -> assertEquals( 'http://localhost/SE_4105/index.php?success=true', $this -> url());
+    $this -> assertEquals( 'http://localhost/TindaJaro/index.php?success=true', $this -> url());
 
     $warning = $this -> byId( 'error' );
 
@@ -94,7 +94,7 @@ class LoginTest extends PHPUnit_Extensions_Selenium2TestCase {
 
   public function testRegistrationInvalidUsername()
   {
-    $this -> url( 'http://localhost/SE_4105/registration/registration.php' );
+    $this -> url( 'http://localhost/TindaJaro/registration/registration.php' );
 
     $firstname = $this -> byId( 'fst' );
     $lastname = $this -> byId( 'lst' );
@@ -127,7 +127,7 @@ class LoginTest extends PHPUnit_Extensions_Selenium2TestCase {
     $form = $this -> byId( 'Log-in' );
     $action = $form -> attribute( 'action' );
 
-    $this -> assertEquals( 'http://localhost/SE_4105/index.php', $action);
+    $this -> assertEquals( 'http://localhost/TindaJaro/index.php', $action);
   }
 
   public function testLoginFieldExist()
@@ -154,7 +154,7 @@ class LoginTest extends PHPUnit_Extensions_Selenium2TestCase {
 
     $form -> submit();
 
-    $this -> assertEquals( 'http://localhost/SE_4105/homepage/vendor.php', $this -> url() );
+    $this -> assertEquals( 'http://localhost/TindaJaro/homepage/vendor.php', $this -> url() );
 
     $greeting = $this -> byId( 'greeting' );
 

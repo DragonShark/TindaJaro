@@ -40,14 +40,14 @@ if (!empty($_POST)) {
 			'$target_file');";
 
 			$con -> query($sql);
-			header("Location: /SE_4105/homepage/vendor/product.php");
+			header("Location: /TindaJaro/homepage/vendor/product.php");
 		}
 	}
 	?>
 
 	<div class="secondary-layer row">
 		<div class="container-sell col-md-8">
-			<form class="form-inline" role="form" action="/SE_4105/homepage/vendor/sell.php" method="POST" enctype="multipart/form-data">
+			<form class="form-inline" role="form" action="/TindaJaro/homepage/vendor/sell.php" method="POST" enctype="multipart/form-data">
 				<div class="form-group row">
 					<div class="col-sm-6">
 						<label for="productName">Product Name:</label>

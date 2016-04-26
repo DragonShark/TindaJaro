@@ -35,8 +35,8 @@ require_once "../../navigation.php";
             $product_date = $row['product_date'];
             $product_id = $row['product_id'];
             $product_image = "<img class= \"container-image\" src=\"$product_photo\" alt=\"$product_name.jpeg\" />";
-            $edit_product = "<a id=\"edit-$product_name\" href= \"/SE_4105/homepage/vendor/editproduct.php?id=$product_id\"><span class= \"glyphicon glyphicon-edit\"></span></a>";
-            $remove_product = "<a href=\"/SE_4105/homepage/vendor/deleteproduct.php?id=$product_id\"><span class= \"glyphicon glyphicon-trash\"></span></a>";
+            $edit_product = "<a id=\"edit-$product_name\" href= \"/TindaJaro/homepage/vendor/editproduct.php?id=$product_id\"><span class= \"glyphicon glyphicon-edit\"></span></a>";
+            $remove_product = "<a href=\"/TindaJaro/homepage/vendor/deleteproduct.php?id=$product_id\"><span class= \"glyphicon glyphicon-trash\"></span></a>";
 
             echo "<tr> ";
             echo "<td>" . $product_image . "</td>";

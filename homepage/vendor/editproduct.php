@@ -75,7 +75,7 @@ if ($result_count > 0) {
       }
 
       $con -> query($sql);
-      header("Location: /SE_4105/homepage/vendor/product.php");
+      header("Location: /TindaJaro/homepage/vendor/product.php");
     }
 
   }
@@ -89,7 +89,7 @@ if ($result_count > 0) {
 <div class="well"><center><h4><b><i>Edit Product</i></b></h4></center></div>
 
   <div class="container-sell col-md-4">
-    <form class="form-inline" role="form" action="/SE_4105/homepage/vendor/editproduct.php?id=<?php echo $product_id?>" method="POST" enctype="multipart/form-data">
+    <form class="form-inline" role="form" action="/TindaJaro/homepage/vendor/editproduct.php?id=<?php echo $product_id?>" method="POST" enctype="multipart/form-data">
       <div class="form-group row">
         <div class="col-sm-6">
           <label for="productName">Product Name:</label>

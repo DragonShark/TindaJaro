@@ -21,7 +21,7 @@
 		if ($result_count > 0 ) {
 			$_SESSION = $data;
 			$_SESSION['logged-in'] = true;
-			header("Location: /SE_4105/homepage/vendor/product.php");
+			header("Location: /TindaJaro/homepage/vendor/product.php");
 			if ($data["classification"] == $classification) {
 				header("Location: homepage/vendor.php");
 			}
