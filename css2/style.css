@@ -1,0 +1,92 @@
+body {
+	background-color: lightblue;
+}
+.container {
+	background-color: lightblue;
+	width: 30%;
+	margin: 1%;
+	padding: 1%;
+}
+.textfield {
+	background-color: lightblue;
+	border-style: none;
+	box-shadow: 2px 2px 3px black;
+}
+.textfield:focus {
+	background-color: lightblue;
+	border-style: none;
+	box-shadow: 2px 2px 3px black;
+}
+.center-element {
+	margin: 0px auto;
+	margin-top: 3%;
+}
+.center-text {
+	text-align: center;
+	font-size: 500%;
+	margin-top: 3%;
+}
+#error {
+	text-align: center;
+	color: red;
+	font-family: cursive;
+}
+.inner-layer {
+	height: 55px;
+	margin: 0px auto;
+	background-color: #262626;
+}
+.table-size{
+	width: 95%;
+	margin: 0px auto;
+}
+.inner-layer-nav {
+	border-style: double;
+	width: 100%;
+	height: inherit;
+	margin: 0px auto;
+	border-style: none;
+}
+.secondary-layer {
+	border-style: none;
+	padding: 1%;
+	width: 90%;
+	height: 600px;
+	margin: 0px auto;
+}
+.container-sell {
+	width: 45%;
+	text-align: center;
+}
+.image {
+	width: 300px;
+	height: 250px;
+	border-style: groove;
+	padding: 5%;
+	margin: 2%;
+}
+.container-image {
+	border-style: ridge;
+	width: 120px;
+	height: 100px;
+	display: inline-block;
+	margin-left: 10%;
+}
+.radio {
+	text-align: center;
+}
+.container-upload {
+	text-align: center;
+	margin-top: 2%;
+	padding: 1%;
+}
+span {
+	font-size: 20px;
+}
+td {
+	margin: 0px auto;
+}
+
+#website-logo {
+	margin-top: 3%;
+}

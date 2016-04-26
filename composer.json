@@ -1,0 +1,11 @@
+{
+  "require": {
+    "behat/behat": "2.5.*@stable",
+    "behat/mink": "1.5.*@stable",
+    "behat/mink-goutte-driver": "*",
+    "behat/mink-extension": "*",
+    "behat/mink-selenium2-driver": "*",
+    "phpunit/phpunit": "^5.3",
+    "phpunit/phpunit-selenium": "^3.0"
+  }
+}
