@@ -1,6 +1,7 @@
 <?php
-require_once "../../header.php";
+
 require_once "../../config.php";
+require_once "../../header.php";
 require_once "../../navigation.php";
 
 $target_file = "";
@@ -8,10 +9,10 @@ $warning = "";
 
 if (!empty($_POST)) {
 
-	$productname = $_POST['productName'];
-	$producttype = $_POST['productType'];
-	$productquantity = $_POST['productQuantity'];
-	$productprice = $_POST['productPrice'];
+	$productName = $_POST['productName'];
+	$productType = $_POST['productType'];
+	$productQuantity = $_POST['productQuantity'];
+	$productPrice = $_POST['productPrice'];
 	$user_id = $_SESSION['user_id'];
 	$target_dir ="../photos/";
 	$target_file = $target_dir . basename($_FILES["upload_file"]["name"]);
@@ -21,10 +22,10 @@ if (!empty($_POST)) {
 
 	echo move_uploaded_file($_FILES["upload_file"]["tmp_name"], $target_file);
 
-	$priceContainString = preg_match($integer, $productprice);
-	$quantityContainString = preg_match($string, $productquantity);
+	$priceContainString = preg_match($integer, $productPrice);
+	$quantityContainString = preg_match($string, $productQuantity);
 
-	if ($priceContainString || $quantityContainString || $productprice <= 0 || $productquantity <= 0) {
+	if ($priceContainString || $quantityContainString || $productPrice <= 0 || $productQuantity <= 0) {
 		$warning = "Invalid input of Price or Quantity Please repeat";
 		echo "<div class=\"alert alert-warning\">
   					<strong>Warning!</strong>" . $warning;
@@ -32,10 +33,10 @@ if (!empty($_POST)) {
 	}else {
 		$sql = "INSERT INTO products(product_name, product_type, product_quantity, product_price, user_id, product_photo)
 		VALUES(
-			'$productname',
-			'$producttype',
-			'$productquantity',
-			'$productprice',
+			'$productName',
+			'$productType',
+			'$productQuantity',
+			'$productPrice',
 			'$user_id',
 			'$target_file');";
 
@@ -62,13 +63,13 @@ if (!empty($_POST)) {
 					</div>
 					<div class="col-sm-6">
 						<div class="radio pull-left">
-							<label><input type="radio" name="product Type" id="meat" value="meat" checked/>Meat</label>
+							<label><input type="radio" name="productType" id="meat" value="meat" checked/>Meat</label>
 						</div><br>
 						<div class="radio pull-left">
-							<label><input type="radio" name="product Type" id="fish" value="fish"/>Fish</label>
+							<label><input type="radio" name="productType" id="fish" value="fish"/>Fish</label>
 						</div><br>
 						<div class="radio pull-left">
-							<label><input type="radio" name="product Type" id="vegetables" value="vegetable"/>Vegetable</label>
+							<label><input type="radio" name="productType" id="vegetables" value="vegetable"/>Vegetable</label>
 						</div><br>
 						<div class="radio pull-left">
 							<label><input type="radio" name="product Type" id="fruit" value="fruit"/>Fruit</label>

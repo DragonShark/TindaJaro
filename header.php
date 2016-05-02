@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	if (!isset($_SESSION['logged-in'])) {
 		if ($_SERVER['REQUEST_URI'] == '/TindaJaro/registration/registration.php'){
 			//do nothing

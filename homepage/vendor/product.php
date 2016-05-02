@@ -1,25 +1,26 @@
 <?php
-require_once "../../header.php";
+
 require_once "../../config.php";
+require_once "../../header.php";
 require_once "../../navigation.php";
 
 ?>
 
 <!-- php to show product -->
-<div class="well"><center><h3>My Products</h3></center></div>
-  <table class="table table-hover table-size" border="4">
-    <thead>
-      <tr>
-        <th>Product Image</th>
-        <th>Product Name</th>
-        <th>Product Quantity</th>
-        <th>Product Price</th>
-        <th>Product Date</th>
-        <th>Modify</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
+  <div class="well"><center><h3>My Products</h3></center></div>
+    <table class="table table-hover table-size" border="4">
+      <thead>
+        <tr>
+          <th>Product Image</th>
+          <th>Product Name</th>
+          <th>Product Quantity</th>
+          <th>Product Price</th>
+          <th>Product Date</th>
+          <th>Modify</th>
+        </tr>
+      </thead>
+      <tbody id="product">
+        <?php
         $user_id = $_SESSION['user_id'];
 
         $sql = "SELECT * FROM products where user_id = '$user_id'";
@@ -47,9 +48,26 @@ require_once "../../navigation.php";
             echo "<td>" . $edit_product . " " . $remove_product . "</td>";
             echo "</tr>";
           }
-      }
+        }
         ?>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  <script type="text/javascript">
+    var timer = function(){
+    myTimer()
+  };
+    var myVar = setInterval(timer, 1000);
+    function myTimer() {
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 & xmlhttp.status == 200) {
+          document.getElementById("product").innerHTML = xmlhttp.responseText;
+        }
+      }
+        xmlhttp.open("GET", "../ajaxproduct.php", true);
+        xmlhttp.send();
+  }
+  </script>
 </body>
 </html>

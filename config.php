@@ -6,4 +6,6 @@
 	$database = "tindajaro";
 
 	$con = new mysqli($server, $username, $password, $database);
+
+	session_start();
 ?>

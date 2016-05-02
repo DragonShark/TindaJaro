@@ -14,6 +14,12 @@
 		$classification = "Vendor";
 
 		$sql = "SELECT * FROM accounts WHERE username = '$username' AND password = '$password'";
+		// $data = $sql -> fetch();
+		// $sql -> bind_param('ss', $username, $password);
+		// $sql -> execute();
+		// $sql -> bind_result($result);
+		// $sql -> store_result();
+		// $num_rows = $sql -> num_rows;
 		$result = $con -> query($sql);
 		$data = mysqli_fetch_assoc($result);
 		$result_count = $result -> num_rows;
@@ -21,13 +27,7 @@
 		if ($result_count > 0 ) {
 			$_SESSION = $data;
 			$_SESSION['logged-in'] = true;
-			header("Location: /TindaJaro/homepage/vendor/product.php");
-			if ($data["classification"] == $classification) {
-				header("Location: homepage/vendor.php");
-			}
-			else {
-				header("Location: homepage/customer.php");
-			}
+			header("Location: /TindaJaro/homepage/vendor.php");
 		} else {
 			$warning = "Invalid Username and Password TRY AGAIN";
 		}
