@@ -54,21 +54,22 @@ require_once "../navigation.php";
     </tbody>
   </table>
   <script type="text/javascript">
-    var timer = function(){
-      myTimer()
-    };
-    var myVar = setInterval(timer, 1000);
-    function myTimer() {
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 & xmlhttp.status == 200) {
-          document.getElementById("product").innerHTML = xmlhttp.responseText;
-        }
-      }
-      xmlhttp.open("GET", "ajax/ajaxvendor.php", true);
-      xmlhttp.send();
-    }
+    doAjax("ajax/ajaxvendor.php", "product");
+    // var timer = function(){
+    //   myTimer()
+    // };
+    // var myVar = setInterval(timer, 1000);
+    // function myTimer() {
+    //
+    //   var xmlhttp = new XMLHttpRequest();
+    //   xmlhttp.onreadystatechange = function() {
+    //     if (xmlhttp.readyState == 4 & xmlhttp.status == 200) {
+    //       document.getElementById("product").innerHTML = xmlhttp.responseText;
+    //     }
+    //   }
+    //   xmlhttp.open("GET", "ajax/ajaxvendor.php", true);
+    //   xmlhttp.send();
+    // }
   </script>
 </body>
 </html>

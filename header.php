@@ -21,3 +21,4 @@
 	<link rel="stylesheet" type="text/css" href="/TindaJaro/css2/style.css">
   <script src="/TindaJaro/jscript/jquery.min.js"></script>
 	<script src="/TindaJaro/jscript/bootstrap.min.js"></script>
+	<script src="/TindaJaro/homepage/ajax/doajax.js"></script>
