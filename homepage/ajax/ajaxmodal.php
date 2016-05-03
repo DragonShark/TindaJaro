@@ -18,4 +18,4 @@ if (!empty($_REQUEST)) {
     echo "Product Name: " . $productName . "<br> Product Price: Php " . $productPrice . "<br> Current Quantity: " . $productQuantity;
   }
 }
- ?>
+?>

@@ -1,15 +1,21 @@
 <?php
-	if (!isset($_SESSION['logged-in'])) {
-		if ($_SERVER['REQUEST_URI'] == '/TindaJaro/registration/registration.php'){
-			//do nothing
-		}
-		else if ($_SERVER['REQUEST_URI'] == '/TindaJaro/index.php?success=true'){
-			//do nothing
-		}
-		else if ($_SERVER['REQUEST_URI'] != '/TindaJaro/index.php') {
-			header('Location: index.php');
-		}
+if (!isset($_SESSION['logged-in'])) {
+	if ($_SERVER['REQUEST_URI'] == '/TindaJaro/registration/registration.php'){
+		//do nothing
 	}
+	else if ($_SERVER['REQUEST_URI'] == '/TindaJaro/delivery_guy/log_in.php'){
+		//do nothing
+	}
+	else if ($_SERVER['REQUEST_URI'] == '/TindaJaro/index.php?success=true'){
+		//do nothing
+	}
+	else if ($_SERVER['REQUEST_URI'] != '/TindaJaro/delivery_guy/log_in.php') {
+		//do nothing
+	}
+	else if ($_SERVER['REQUEST_URI'] != '/TindaJaro/index.php') {
+		header('Location: index.php');
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +25,6 @@
 	<link rel="stylesheet" type="text/css" href="/TindaJaro/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/TindaJaro/fonts/glyphicon-halflings-regular.woff">
 	<link rel="stylesheet" type="text/css" href="/TindaJaro/css2/style.css">
-  <script src="/TindaJaro/jscript/jquery.min.js"></script>
+	<script src="/TindaJaro/jscript/jquery.min.js"></script>
 	<script src="/TindaJaro/jscript/bootstrap.min.js"></script>
 	<script src="/TindaJaro/homepage/ajax/doajax.js"></script>

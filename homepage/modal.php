@@ -48,21 +48,6 @@
 
   //ajax
   doAjax("ajax/ajaxmodal.php?id=<?php echo $productId; ?>", "currentQuantity");
-  // var timer = function(){
-  //   myTimer()
-  // };
-  // var myVar = setInterval(timer, 1000);
-  // function myTimer() {
-  //
-  //   var xmlhttp = new XMLHttpRequest();
-  //   xmlhttp.onreadystatechange = function() {
-  //     if (xmlhttp.readyState == 4 & xmlhttp.status == 200) {
-  //       document.getElementById("currentQuantity").innerHTML = xmlhttp.responseText;
-  //     }
-  //   }
-  //   xmlhttp.open("GET", "ajax/ajaxmodal.php?id=<?php echo $productId; ?>", true);
-  //   xmlhttp.send();
-  // }
 </script>
 </head>
 

@@ -10,9 +10,11 @@
             <li ><a href="/TindaJaro/homepage/vendor/sell.php">Sell</a></li>
             <li ><a href="/TindaJaro/homepage/vendor/product.php">My Products</a></li>
             <li ><a href="/TindaJaro/homepage/cart/cart.php">Cart</a></li>
+            <li ><a href="/TindaJaro/homepage/order/pendingorder.php">Pending Order/s</a></li>
+            <li ><a href="/TindaJaro/delivery_guy/registration.php">Register Delivery Guy</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/TindaJaro/log_out.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="/TindaJaro/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </div>
       </div>

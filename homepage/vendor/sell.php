@@ -72,7 +72,7 @@ if (!empty($_POST)) {
 							<label><input type="radio" name="productType" id="vegetables" value="vegetable"/>Vegetable</label>
 						</div><br>
 						<div class="radio pull-left">
-							<label><input type="radio" name="product Type" id="fruit" value="fruit"/>Fruit</label>
+							<label><input type="radio" name="productType" id="fruit" value="fruit"/>Fruit</label>
 						</div>
 					</div>
 				</div><br><br>

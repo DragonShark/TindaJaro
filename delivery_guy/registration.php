@@ -2,15 +2,14 @@
 
 require_once "../config.php";
 require_once "../header.php";
+require_once "../navigation.php";
 
 $warning = "";
 
 if (!empty($_POST)) {
-
+	$vendorId = $_SESSION['user_id'];
 	$firstname = $_POST['first'];
 	$lastname = $_POST['last'];
-	$gender = $_POST['sex'];
-	$email = $_POST['email'];
 	$address = $_POST['address'];
 	$username = $_POST['user'];
 	$password = $_POST['pass'];
@@ -23,11 +22,11 @@ if (!empty($_POST)) {
 	if ($sql -> fetch() > 0) {
 			$warning = "Username already exists!";
 	}else {
-		$sql = $con -> prepare("INSERT INTO accounts (lastname, irstname, gender, email, address, username, password)
-												VALUES (?, ?, ?, ?, ?, ?, ?)");
-		$sql -> bind_param('sssssss', $lastname, $firstname, $gender, $email, $address, $username, $password);
+		$sql = $con -> prepare("INSERT INTO deliveryguy (vendor_id, lastname, firstname, address, username, password)
+												VALUES (?, ?, ?, ?, ?, ?)");
+		$sql -> bind_param('ssssss', $vendorId, $lastname, $firstname, $address, $username, $password);
 		$sql -> execute();
-		header("Location:/TindaJaro/index.php?success=true");
+    $warning = "Delivery guy successfully registered";
 		}
 	}
 	?>
@@ -39,7 +38,7 @@ if (!empty($_POST)) {
 		<h2><?php echo $warning; ?></h1>
 		</div>
 		<div class="container">
-			<form id="Registration" role="form" method="POST" action="registration.php">
+			<form id="Registration" role="form" method="POST" action="/TindaJaro/delivery_guy/registration.php">
 				<div class="form-group">
 					<label for="fst">Firstname: </label>
 					<input class="form-control textfield" id="fst" type="text" name="first" required />
@@ -47,15 +46,6 @@ if (!empty($_POST)) {
 				<div class="form-group">
 					<label for="lst">Lastname: </label>
 					<input class="form-control textfield" id="lst" type="text" name="last" required />
-				</div>
-				<div>
-					<label>Gender: </label> <br>
-					<input id="male" type="radio" value="Male" name="sex" checked /> Male <br>
-					<input id="female" type="radio" value="Female" name="sex" /> female
-				</div> <br>
-				<div class="form-group">
-					<label for="eml">Email: </label>
-					<input type="email" class="form-control textfield" id="eml" type="text" name="email" required />
 				</div>
 				<div class="form-group">
 					<label for="address">Address: </label>
@@ -71,7 +61,7 @@ if (!empty($_POST)) {
 					<input class="btn btn-warning center-block" type="button" value="Show Password" onmousedown="showpassword()" onmouseup="hidepassword()">
 				</div> <br>
 				<input class="btn btn-primary" type="submit" id="Register" value="Register" />
-				  <input class="btn btn-info" type="reset" value="Reset" />
+        <input class="btn btn-info" type="reset" value="Reset" />
 			</form>
 		</div>
 	</body>

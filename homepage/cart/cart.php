@@ -6,7 +6,7 @@ require_once "../../navigation.php";
 ?>
 
 <div>
-  <div class="well"><center><h3>My Cart</h3></center></div>
+  <div class="well table-size"><center><h3>My Cart</h3></center></div>
   <table class="table table-hover table-size" border="3">
     <thead>
       <tr>
@@ -18,9 +18,8 @@ require_once "../../navigation.php";
         <th>Modify</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="product">
       <?php
-
       $cartOwnerId = $_SESSION["user_id"];
       $cartOwnerName = $_SESSION["irstname"];
       $productOwnerId = 0;
@@ -117,6 +116,9 @@ require_once "../../navigation.php";
       ?>
     </tbody>
   </table>
-  <h4><center><p class="bg-danger"><?php echo $notification; ?></p></center></h4>
+  <h4><center><p class="bg-danger table-size"><?php echo $notification; ?></p></center></h4>
 </div>
+<script type="text/javascript">
+  doAjax("../ajax/ajaxcart.php", "product");
+</script>
 </body>

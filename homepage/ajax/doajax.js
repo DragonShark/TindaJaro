@@ -1,5 +1,4 @@
 function doAjax(url, id){
-  alert("xmlhttp.responseText");
   var timer = function(){
     myTimer()
   };

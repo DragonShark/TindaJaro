@@ -1,31 +1,38 @@
 <?php
 
-require_once "../../config.php";
+  require_once "../../config.php";
 
-$sql = "SELECT * FROM products";
-$result = $con -> query($sql);
-$result_count = $result -> num_rows;
+  $productOwnerId = $_SESSION['user_id'];
+  $notification = "";
 
-if ($result_count > 0) {
-  while ($row = $result -> fetch_assoc()) {
-    $product_photo = str_replace("../", "", $row['product_photo']);
-    $product_price = $row['product_price'];
-    $product_quantity = $row['product_quantity'];
-    $product_name = $row['product_name'];
-    $product_date = $row['product_date'];
-    $product_id = $row['product_id'];
-    $product_image = "<img class= \"container-image\" src=\"$product_photo\" alt=\"$product_name.jpeg\" />";
-    $addToCart = "<a href=\"/TindaJaro/homepage/modal.php?id=$product_id\"><span class= \"glyphicon glyphicon-shopping-cart\"></span></a>";
+  $sql = "SELECT * FROM products WHERE user_id != '$productOwnerId'";
+  $result = $con -> query($sql);
+  $result_count = $result -> num_rows;
 
-    echo "<tr> ";
-    echo "<td>" . $product_image . "</td>";
-    echo "<td>" . $product_name . "</td>";
-    echo "<td>" . $product_quantity . "</td>";
-    echo "<td>" . $product_price . "</td>";
-    echo "<td>" . $product_date . "</td>";
-    echo "<td>" . $addToCart . "</td>";
-    echo "</tr>";
+  if ($result_count > 0) {
+    while ($row = $result -> fetch_assoc()) {
+      $productPhoto = str_replace("../", "", $row['product_photo']);
+      $productPrice = $row['product_price'];
+      $productQuantity = $row['product_quantity'];
+      $productName = $row['product_name'];
+      $productDate = $row['product_date'];
+      $productId = $row['product_id'];
+      $productImage = "<img class= \"container-image\" src=\"$productPhoto\" alt=\"$productName.jpeg\" />";
+      $addToCart = "<a href=\"/TindaJaro/homepage/modal.php?id=$productId\"><span class= \"glyphicon glyphicon-shopping-cart\"></span></a>";
+
+      if (!$productQuantity <= 0) {
+        echo "<tr> ";
+        echo "<td>" . $productImage . "</td>";
+        echo "<td>" . $productName . "</td>";
+        echo "<td>" . $productQuantity . "</td>";
+        echo "<td>" . $productPrice . "</td>";
+        echo "<td>" . $productDate . "</td>";
+        echo "<td>" . $addToCart . "</td>";
+        echo "</tr>";
+      } else {
+        $deleteSql = "DELETE FROM products WHERE product_quantity= 0";
+        $con -> query($deleteSql);
+      }
+    }
   }
-}
-
  ?>
